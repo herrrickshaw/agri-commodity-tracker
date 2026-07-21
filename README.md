@@ -9,6 +9,7 @@ indicator panel, from fully open sources (no registration, no paid keys).
 |---|---|---|---|
 | `collectors/mandi_prices.py` | Agmarknet via [data.gov.in](https://data.gov.in) API | APMC mandi prices: state / district / market / commodity / variety, min-max-modal ₹ per quintal | Daily (feed fills through the IST day — pull after ~14:00 IST) |
 | `collectors/worldbank_agri.py` | [World Bank API](https://api.worldbank.org/v2) | 9 agri indicators (value-added, fertilizer use, cereal yield, food production index, irrigation, employment) × 7 countries (IN CN BR US ID VN TH), 1960–present | Annual series; re-pull monthly |
+| `collectors/fci_locations.py` | [FCI](https://fci.gov.in/depot-details) depot-details API | Full Food Corporation of India depot directory: 478 depots across 5 zones / 25 regions, with zone/region codes + names and depot web links | On change (directory is near-static) |
 
 The data.gov.in collector uses the **public demo API key documented on
 data.gov.in** by default; set `DATA_GOV_IN_KEY` to use a personal key.
@@ -36,6 +37,15 @@ Suggested cron (14:30 IST daily):
 
 - `mandi_prices(state, district, market, commodity, variety, grade, arrival_date, min_price, max_price, modal_price, pulled_on)`
 - `worldbank_agri(country, indicator_code, indicator, year, value, source_last_updated)`
+- `fci_locations(depot_id, depot_code, depot_name, region_code, region_name, zone_id, zone_name, credential_details, additional_information, primary_link, n_links, raw_json)`
+
+### FCI depot API note
+
+`fci.gov.in` is an Angular app that POSTs an **AES-128-CBC-encrypted,
+HMAC-SHA256-signed** body and returns an encrypted response. The
+`fci_locations.py` collector replicates that envelope — the AES key, IV and
+HMAC key are embedded in the site's public JS bundle (`main.*.js`), so they are
+client-side constants, not secrets. No browser or login required.
 
 ## Provenance
 

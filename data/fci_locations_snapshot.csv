@@ -1,0 +1,479 @@
+depot_id,depot_code,depot_name,region_code,region_name,zone_id,zone_name,credential_details,additional_information,primary_link,n_links
+3,NB12003,OKHLA,NB,Delhi Region,3,North Zone,,,http://203.194.111.183:8800/Okhla/okhla-1.html,1
+4,NB12002,NEW PUSA (CTO),NB,Delhi Region,3,North Zone,,,http://122.160.40.160:8800/Pusa/Pusa-1.html,1
+5,NB13001,NARELA,NB,Delhi Region,3,North Zone,,,http://203.194.111.183:8800/Narela/Narela-1.html,3
+6,NB13003,SHAKTINAGAR,NB,Delhi Region,3,North Zone,,,http://59.177.180.116/,3
+7,NB13002,GHEVRA,NB,Delhi Region,3,North Zone,,,http://203.194.111.183:8800/Ghevra/G-1.html,5
+8,NC14003,FSD TARAORI,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/tarawadi.php,1
+9,NC14003,FSD TARAORI,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/tarawadi.php,1
+10,NC15003,FSD KAITHAL I,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_KAITHAL1.HTML,1
+11,NC15005,FSD KAITHAL II,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_KAITHAL.HTML,1
+12,NC13012,FSD SIRSA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_SIRSA.HTML,1
+13,NC16006,BG NARWANA,NC,Haryana Region,3,North Zone,,,http://139.59.55.211/NarwanaBGD1.html,1
+14,NC15001,FSD CHEEKA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_CHEEKA.HTML,1
+15,NC15004,FSD PEHOWA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_PEHOWA.HTML,1
+16,NC15002,FSD KURUKSHETRA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_KURUKSHETA.HTML,1
+17,NC16001,FSD GOHANA,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/Gohana.php,1
+18,NC13002,FSD BHATTU,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_BATTU.HTML,1
+19,NC13005,FSD DABWALI,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_DABWALI.HTML,1
+20,NC14001,FSD AMBALA CANTT,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/ambala.php,1
+21,NC13001,FSD BARWALA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_BARWALA.HTML,1
+22,NC13004,FSD BAWANI KHERA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_BHAWANIKERA.HTML,1
+23,NC13003,FSD BHIWANI,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_BHIWANI.HTML,1
+24,NC13006,FSD ELLENABAD,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_ELLENABAD.HTML,1
+25,NC13008,FSD HISSAR,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_HISAR.HTML,1
+26,NC13009,FSD KALANWALI,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_KALANWALI.HTML,1
+27,NC16002,FSD NARWANA,NC,Haryana Region,3,North Zone,,,http://139.59.55.211/NarwanaD1.html,1
+28,NC16003,FSD ROHTAK,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/rohtak.php,1
+29,NC16007,FSD SAFIDON,NC,Haryana Region,3,North Zone,,,http://rvmcctv.in/FCI-FSD/Safindo.php,1
+30,NC13011,FSD TOHANA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_TOHANA.HTML,1
+31,NC13010,BG SIRSA,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_BG_SIRSA.HTML,1
+32,NC13007,FSD FATEHABAD,NC,Haryana Region,3,North Zone,,,http://fcicctv.in/FCI_HR_FATEHABAD.HTML,1
+33,ND13003,CHAMBA,ND,HP Region,3,North Zone,,,http://fcicctv.in/FCI_HP_CHAMBA.HTML,1
+34,ND14001,KULLU,ND,HP Region,3,North Zone,,,http://fcicctv.in/FCI_HP_KULLU.HTML,1
+35,ND14002,HAMIRPUR,ND,HP Region,3,North Zone,,,http://fcicctv.in/FCI_HP_HAMIRPUR.HTML,1
+36,ND13002,UNA,ND,HP Region,3,North Zone,,,http://fcicctv.in/FCI_HP_UNA.HTML,1
+37,ND13008,FSD TANDA KHOLI,ND,HP Region,3,North Zone,,,http://fcicctv.in/FCI_HP_TANDAKHOLI.HTML,1
+38,ND13007,BANE DE HATTI RANITAL,ND,HP Region,3,North Zone,,,http://192.168.150.104/,1
+39,NE13005,BARAMULA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_BARAMULLA.HTML,1
+40,NE13009,BUDGAM,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_BUDGAAM.HTML,1
+41,NE13002,SRINAGAR,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_SRINAGAR.HTML,1
+42,NE12001,CHATHA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_CHATHA.HTML,2
+43,NE12006,POONCH,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_POONCH.HTML,1
+44,NE12003,KATHUA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_KATHUA.HTML,2
+45,NE12005,RAJOURI,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_RAJOURI.HTML,2
+46,NE12002,NEW GODOWN JAMMU,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_NEWGODOWN.HTML,1
+47,NE13007,KUPWARA,NE,J&K Region,3,North Zone,,,88afb3db71445e2c,1
+48,NE12007,KISHTWAR,NE,J&K Region,3,North Zone,,,0a7463ef8387c4f9,1
+49,NE12004,KHILLANI (DODA),NE,J&K Region,3,North Zone,,,4cb7d14e1713b2e1,1
+50,FD12001,DHARAMNAGAR,FD,NEF Region,5,North East Zone,,,http://lamkaonline.com/fci/dharmanagar/,1
+51,FD12003,NANDAN NAGAR,FD,NEF Region,5,North East Zone,,,http://lamkaonline.com/fci/nandannagar/,1
+52,FD16002,SHILLONG,FD,NEF Region,5,North East Zone,,,http://lamkaonline.com/fci/shillong/,1
+53,FE14001,DIMAPUR,FE,Nagaland Region,5,North East Zone,,,http://lamkaonline.com/dimapurfci/,1
+54,FE14002,MOKOKCHUNG,FE,Nagaland Region,5,North East Zone,,,https://www.cpplusworld.com/software,1
+55,FE14004,MON,FE,Nagaland Region,5,North East Zone,,,https://www.cpplusworld.com/software,1
+56,FE14002,MOKOKCHUNG,FE,Nagaland Region,5,North East Zone,,,https://www.cpplusworld.com/software,1
+57,FE14006,FSD PHESAMA,FE,Nagaland Region,5,North East Zone,,,https://www.cpplusworld.com/software,1
+58,FE14002,MOKOKCHUNG,FE,Nagaland Region,5,North East Zone,,,https://lamkaonline.com/fci/mokokchung/index.php,1
+59,FF12005,SANGAIPROU,FF,Manipur Region,5,North East Zone,,,http://lamkaonline.com/fci/sangaiprou/,1
+60,FF12004,UKHRUL,FF,Manipur Region,5,North East Zone,,,https://play.google.com/store/apps/detailsidcom.mm.android.direct.g_CMOB_XU&amp;hlen_IN&amp;glUS,1
+61,FF12003,JIRIBAM,FF,Manipur Region,5,North East Zone,,,https://play.google.com/store/apps/detailsidcom.mm.android.direct.g_CMOB_XU&amp;hlen_IN&amp;glUS,1
+62,FF12001,SENAPATI,FF,Manipur Region,5,North East Zone,,,https://www.hikvision.com/en/support/download/software/Hik-Connect/,1
+63,FB16001,DIPHU,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdhojai,1
+64,FB20002,TANGLA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdtangla,1
+65,FB18005,GOALPARA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdramnagar,1
+66,FB16003,SENCHOWA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdsenchowa,1
+67,FB16002,HOJAI,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdhojai,1
+68,FB13005,CWC CINNAMARA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdcinnamara,1
+69,FB14001,GOSSAIGAON,FB,Assam Region,5,North East Zone,,,http://lamkaonline.com/fci/gossaigaon/,1
+70,FB19002,TINSUKIA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdtinsukia,1
+71,FB19001,CHAULKHOWA,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdchaulkhowa,1
+72,FB12001,NEW GUWAHATI,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsdguwahati,1
+73,FB15001,FSD DHEMAJI,FB,Assam Region,5,North East Zone,,,https://fciassam.livestreamx.in/fsddhemaii,1
+74,FB15003,FSD NARAYANPUR,FB,Assam Region,5,North East Zone,,,http://orange.instaon.com,1
+75,FB20001,BINDUKURI,FB,Assam Region,5,North East Zone,,,Mobile app-gCMOB install the app from play store and open click the icon on top right and add instal on select wired devices fill in serial no user name and password start live preview,1
+76,FB20001,BINDUKURI,FB,Assam Region,5,North East Zone,,,Same process for GCmob.,1
+77,FC12001,BANDERDEWA,FC,Arunachal Region,5,North East Zone,,,http://orange.instaon.com,1
+78,FC12007,PASIGHAT,FC,Arunachal Region,5,North East Zone,,,http://orange.instaon.com,1
+79,FC12004,BHALUKPONG,FC,Arunachal Region,5,North East Zone,,,under process,1
+80,FC12010,KHARSANG,FC,Arunachal Region,5,North East Zone,,,under process,1
+81,NF12007,N PANNUWAN,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_NUSHERA.HTML,1
+82,NF23009,BHALOT (BHOLATH),NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Bolath.html,1
+83,NF12010,VALLAH,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_VALLAH.HTML,1
+84,NF17001,BATALAI,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BATALA1.HTML,1
+85,NF22005,DHURI1,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_DHURI2.HTML,1
+86,NF22014,SANGRUR2,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_SANGRUR2D2.HTML,1
+87,NF19007,NAWANSHAHAR FSD I,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_NAWANSHAHAR1.HTML,1
+88,NF19043,NAWANSHAHR FSD II,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_NAWANSHAHAR2.HTML,1
+89,NF15001,ABOHAR,NF,Punjab Region,3,North Zone,,,,0
+90,NF22035,MALERKOTLA FSD I,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MALERKOTAL1.HTML,1
+91,NF22008,MALERKOTLA FSD II,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MALERKOTLA2.HTML,1
+92,NF23007,PHAGWARA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MALERKOTLA2.HTML,1
+93,NF22005,DHURI1,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_DHURI1.HTML,1
+94,NF22012,DHURI BC2,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BCDHURI1D2.HTML,1
+95,NF23002,KAPURTHALA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDOld.html,1
+96,NF23010,KAPURTHALA NEW,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/NewFSDD1.html,1
+97,NF13001,BHATINDA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHATINDA.HTML,1
+98,NF15017,ZIRA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_ZIRA.HTML,1
+99,NF17017,BATALA II,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BATALA2.HTML,1
+100,NF19004,JALLANDHAR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_JALANDHAR2.HTML,1
+101,NF19001,ADAMPUR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_ADHAMPUR.HTML,1
+102,NF19003,BHOGPUR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHOGPUR.HTML,1
+103,NF20001,CHAWAPAIL,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDChawapail.html,1
+104,NF20006,JAGRAON,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDJagraon.html,1
+105,NF22007,MEHALKALAN,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MEHALKHALAN.HTML,1
+106,NF22009,SUNAM,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_SUMAN.HTML,1
+107,NF15007,MAKHU,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MAKHU.HTML,1
+108,NF18007,TANDA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Tanda.html,1
+109,NF18003,GARHSHANKAR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Garhshankar.html,1
+110,NF20008,KILARAIPUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/KIlaraipur.html,1
+111,NF24002,MOGA FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FsdMoga.html,1
+112,NF12001,BHAGTANWALA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHAGTANWALA.HTML,1
+113,NF12005,MEHTA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MEHTA.HTM,1
+114,NF15003,FEROZEPUR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_FEROZEPUR.HTML,1
+115,NF15009,TALWANDIBHAI,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_TALWANDIBHAI.HTML,1
+116,NF17002,DHARIWAL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_DHARIWAL.HTML,1
+117,NF17004,PATHANKOT,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_PATHANKOT.HTML,1
+118,NF19002,APRA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_APRA.HTML,1
+119,NF21005,BC PATIALA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/BCPatiala.html,1
+120,NF21002,DUDHAN,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Dudhan.html,1
+121,NF21010,RAJPURA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Rajpura.html,1
+122,NF21006,PATRAN,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Patran.html,1
+123,NF21009,PATIALA FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDPatiala.html,1
+124,NF16003,DODA FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDDoda.html,1
+125,NF18001,BALACHAUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDBalachaur.html,1
+126,NF18005,MUKERIAN,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDMukerian.html,1
+127,NF18002,DASUYA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDDasuya.html,1
+128,NF23008,SULTANPUR LODHI,NF,Punjab Region,3,North Zone,,,,0
+129,NF18006,NASARALA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDNswala.html,1
+130,NF12008,RAYYA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_RAYYA.HTML,1
+131,NF18001,BALACHAUR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHUCCHU.HTML,1
+132,NF13006,SARDULGARH,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_SARDULGARH.HTML,1
+133,NF19004,JALLANDHAR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_NGM.HTML,1
+134,NF19009,BANGA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BANGA.HTML,1
+135,NF19006,NAKODAR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_NAKODAR.HTML,1
+136,NF22001,AHMEDGARH,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_AHMEDGARH.HTML,1
+137,NF14019,CH SAHIB,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_CHAMKAURSAHIB.HTML,1
+138,NF22004,BHAWANIGARH,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHAWANIGARH.HTML,1
+139,NF14025,CHINARTHAL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_CHINARTHAAL.HTML,1
+140,NF14009,KHAMMANON,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_KHAMANO.HTML,1
+141,NF21001,BANUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/BANURD1.html,1
+142,NF24005,DHARAMKOT FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/DharamkotD1.html,1
+143,NF20010,MULLANPUR DAKHA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/JangpurD1.html,1
+144,NF20004,HATHUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/HathurD1.html,1
+145,NF20016,SAHNEWAL,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/SahnewalCU1D1.html,1
+146,NF18006,NASARALA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/NasralaD1.html,1
+147,NF18004,HOSHIARPUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/HosiyarpurD1.html,1
+148,NF16005,KOTKAPURA FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/KotkauraD1.html,1
+149,NF12004,CHABHAL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_CHABHAL.HTML,1
+150,NF12006,MAJITHA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MAJITHA.HTML,1
+151,NF13029,RAMPURA PHUL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_RAMPURAPHUL.HTML,1
+152,NF13023,MANSA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_MANSA.HTML,1
+153,NF14001,KHARAR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_KHARAR.HTML,1
+154,NF14002,KURALI,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_KURALI.HTML,1
+155,NF14004,MORINDA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_MORINDA.HTML,1
+156,NF14005,AMLOH,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_AMLOH.HTML,1
+157,NF14008,SANGHOL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_SANGHOL.HTML,1
+158,NF14017,SIRHIND,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_C_SIRHIND.HTML,1
+159,NF20002,DORAHA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/DorahaD1.html,1
+160,NF20016,SAHNEWAL,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/SahnewalD1.html,1
+161,NF13007,TALWANDI SABOO,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_TALWANDISABO.HTML,1
+162,NF15008,RORANAWALI,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_RORAWALI.HTML,1
+163,NF15005,JALALABAD,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_JALALABAD.HTML,1
+164,NF19004,JALLANDHAR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_JANDIALA.HTML,1
+165,NF20007,JAMALPUR,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/JamalpurD1.html,1
+166,NF16007,MALOUT FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/MaloutD1.html,1
+167,NF16004,FARIDKOT FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FaridkotD1.html,1
+168,NF21012,NABHA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/NebhaD1.html,1
+169,NF20016,SAHNEWAL,NF,Punjab Region,3,North Zone,,,http://139.59.55.211/SahnewalD2.htm,1
+170,NF12009,TARAN TARAN,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_TARNTARAN.HTML,1
+171,NF15006,LADHUKA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_LADHUKA.HTML,1
+172,NF22011,TAPA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_TAPA.HTML,1
+173,NF20015,RAIKOT,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/Raikot.html,1
+174,NF22003,BHADAUR1,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_BHADAUR.HTML,1
+175,NF15002,FAZILKA,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_FAZALIKA.HTML,1
+176,NF20011,KHANNA,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/khanna,1
+177,NF16009,MALOUT BG,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/bgmalout,1
+178,NF18007,TANDA,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/bgtanda,1
+179,NF22002,BARNALA1,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/barnala1,1
+180,NF22013,BARNALA2,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/barnala2,1
+181,NF22010,SANGRUR1,NF,Punjab Region,3,North Zone,,,http://13.233.206.247/sangrur1,1
+182,NF20014,MACHHIWARA,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/MachiwaraD1.html,1
+183,NF20012,MALOUD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/MaloadD1.html,1
+184,NF17003,GURDASPUR,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_GURDASPUR.HTML,1
+185,NF17002,DHARIWAL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_DHARIWAL.HTML,1
+186,NF17002,DHARIWAL,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_DHARIWAL.HTML,1
+187,NF12052,KATHUNANGAL SILO,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/FSDKhanna-SiloD1.html,1
+188,NF16008,KOTKAPURA BG,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/BGKotkapuraD1.html,3
+189,NF19005,LOHIANKHAS,NF,Punjab Region,3,North Zone,,,http://fcicctv.in/FCI_P_LOHIANKHAS.HTML,1
+190,NF16006,LAKHEWALI FSD,NF,Punjab Region,3,North Zone,,,http://139.59.54.44/LakhewaliD1.html,1
+191,NI13001,RUDRAPUR,NI,Uttarakhand Region,3,North Zone,,,http://livestreams-rtsp.info:8080/fci/uk/rdpr.jsp,1
+192,NI14001,SIMLI,NI,Uttarakhand Region,3,North Zone,,,http://livestreams-rtsp.info:8080/fci/uk/sml.jsp,1
+193,NI13002,BAZPUR,NI,Uttarakhand Region,3,North Zone,,,http://livestreams-rtsp.info:8080/fci/uk/bzpr.jsp,1
+194,NI13003,PITHORAGARH,NI,Uttarakhand Region,3,North Zone,,,http://livestreams-rtsp.info:8080/fci/uk/ptgr.jsp,1
+195,NE13005,BARAMULA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_BARAMULLA.HTM,1
+196,NE13009,BUDGAM,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_BUDGAAM.HTML,1
+197,NE13002,SRINAGAR,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_SRINAGAR.HTML,1
+198,NE12002,NEW GODOWN JAMMU,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_NEWGODOWN.HTML,1
+199,NE12001,CHATHA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_CHATHA.HTML,2
+200,NE12006,POONCH,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_POONCH.HTML,2
+201,NE12003,KATHUA,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_KATHUA.HTML,2
+202,NE12005,RAJOURI,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_RAJOURI.HTML,2
+203,NE12002,NEW GODOWN JAMMU,NE,J&K Region,3,North Zone,,,http://fcicctv.in/FCI_JK_NEWGODOWN.HTML,1
+204,NE13007,KUPWARA,NE,J&K Region,3,North Zone,,,88afb3db71445e2c,1
+205,NE12007,KISHTWAR,NE,J&K Region,3,North Zone,,,0a7463ef8387c4f9,1
+206,NE12004,KHILLANI (DODA),NE,J&K Region,3,North Zone,,,4cb7d14e1713b2e1,1
+207,NG15003,FSD JALORE,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_JALORE.HTML,1
+208,NG13004,FSD SADULPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_SADULPUR.HTML,1
+209,NG16015,FSD SAWAIMADHOPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_SAWIMADHOPUR.HTML,1
+210,NG19006,FSD MARWAR JN,NG,Rajasthan Region,3,North Zone,,,https://fcicctv.in/FCI_RAJ_MARWAR.HTML,1
+211,NG19003,FSD BHILWARA,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_BHILWARA.HTML,1
+212,NG17002,FSD SRIBIJAYANAGAR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_SVN.HTML,1
+213,NG13005,FSD JHUNJHUNU,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_JHUNJHUNU.HTML,1
+214,NG12004,FSD DHOLPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_DHOLPUR.HTML,1
+215,NG13003,FSD SUJANGARH,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_SUJANGARH.HTML,1
+216,NG15002,FSD POKRAN,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_POKARAN.HTML,1
+217,NG19001,FSD AJMER,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_AJMER.HTML,1
+218,NG18001,FSD BANSWARA,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_BANSWARA.HTML,1
+219,NG17003,FSD HANUMANGARH,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_HANUMANGARH.HTML,1
+220,NG12003,FSD KHERLI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_KHERLI.HTML,1
+221,NG15004,FSD JODHPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_JODHPUR.HTML,1
+222,NG12001,FSD ALWAR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_ALWAR.HTML,1
+223,NG14003,FSD NEWAI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_NIWAI.HTML,1
+224,NG13002,FSD CHURU,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_CHURU.HTML,1
+225,NG18003,FSD UDAIPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_UDAIPUR.HTML,1
+226,NG15001,FSD BARMER,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_BARMER.HTML,1
+227,NG19005,FSD PALI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCIPALI.HTMLL,1
+228,NG16004,BC SAWAIMADHOPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_BCSM.HTML,1
+229,NG14002,FSD BANDIKUI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_BANDIKUI.HTML,1
+230,NG14004,FSD SIKAR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_SIKAR.HTML,1
+231,NG18004,FSD SIROHI ROAD,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_SIROHI.HTML,1
+232,NG16001,FSD BARAN,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_BARAN.html,1
+233,NG16003,FSD BUNDI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_BUNDI.HTML,1
+234,NG19002,FSD KISHANGARH,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_KISHANGARH.HT,1
+235,NG16002,FSD SHIVPURA(KOTA),NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCIshivpura.html,1
+236,NG16005,FSD BHAWANIMANDI,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCIBhawanimandi.html,1
+237,NG12002,FSD BHARATPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCIBHARATPUR.HTML,1
+238,NG14001,FSD GANDHINAGAR JAIPUR,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCIGandinagar.html,1
+239,NG18002,FSD CHANDERIA,NG,Rajasthan Region,3,North Zone,,,http://fcicctv.in/FCI_RAJ_CHANDARIA.HTML,1
+240,NH14005,KHURJA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_KHURJA.HTML,1
+241,NH16001,FSD GORAKHPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_GORAKHPUR2.HTML,1
+242,NH34003,HARDUAGANJ,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HARDUGANJ1.HTML,1
+243,NH34003,HARDUAGANJ,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HARDUGANJ2.HTML,1
+244,NH30011,KAISARGANJ,NH,UP Region,3,North Zone,,,,0
+245,NH15002,BARABANKI (OLD),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_BARABANKI2D1.HTML,1
+246,NH15003,BARABANKI (NEW),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_BARABANKI2D2.HTML,1
+247,NH21001,TALKATORA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_TALKATORAD2.HTML,1
+248,NH21005,RAEBARELI,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_RAIBARELY.HTML,1
+249,NH21002,RAIBAREILLY,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_RAIBARELYD2.HTML,1
+250,NH24002,VYASNAGAR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_VYASNAGAR2.HTM,1
+251,NH17002,PARTAPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_PARTAPUR.HTML,1
+252,NH19002,ORAI,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_ORAI.HTML,1
+253,NH12002,SHIKHOABAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_SHIKOHABAD1.HTML,1
+254,NH17001,HAPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HAPUR1.HTML,1
+255,NH17003,HAPUR(SILO),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HAPUR2.HTML,1
+256,NH15001,FAIZABAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_FAIZABAD1.HTML,1
+257,NH14003,CHANDPUR ROAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_CHANDPUR.HTML,1
+258,NH34003,HARDUAGANJ,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HARDUGANJ.HTML,1
+259,NH21001,TALKATORA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_TALKATORA.HTML,1
+260,NH34004,HATHRAS,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HATRAS.HTML,1
+261,NH28001,ATTARA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_ATARRA.HTML,1
+262,NH16001,FSD GORAKHPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_GORAKHPUR.HTML,1
+263,NH22001,MORADABAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_MORADABAD.HTML,1
+264,NH15003,BARABANKI (NEW),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_BARABANKI1.HTML,1
+265,NH22002,DHAMORA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_DHAMORA1.HTML,1
+266,NH30001,GONDA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_GONDA.HTML,1
+267,NH12002,SHIKHOABAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_SHIKOHABAD2.HTML,1
+268,NH16003,FSD PADRAUNA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_PADRAUNA.HTML,1
+269,NH14002,SHYAMNAGAR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_SHYAMNAGAR.HTML,1
+270,NH17001,HAPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HAPUR.HTML,1
+271,NH12001,AGRA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_AGRACANT2.HTML,1
+272,NH22002,DHAMORA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_DHAMORA.HTML,1
+273,NH20002,ETAWAH,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_ETAWA.HTML,1
+274,NH32001,FSD HARDOI,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_HARDOI.HTML,1
+275,NH19001,JHANSI,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_JANSI.HTML,1
+276,NH32003,FSD SITAPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_SITAPURA.HTML,1
+277,NH26001,FSD NAINI(ALLAHABAD),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_NAINI1.HTML,1
+278,NH26001,FSD NAINI(ALLAHABAD),NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_NAINI2.HTML,1
+279,NH26002,FSD FATEHPUR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_FATEPUR.HTML,1
+280,NH12001,AGRA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_AGRACANT1.HTML,1
+281,NH15001,FAIZABAD,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_FAIZABAD.HTML,1
+282,NH28003,MAHOBA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_MAHOBA.HTML,1
+283,NH13002,PILIBHIT,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_PILIBHIT.HTML,1
+284,NH16002,FSD BASTI1,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_BASTI.HTML,1
+285,NH27001,FSDAZAMGARH,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_AZAMGARH.HTML,1
+286,NH24002,VYASNAGAR,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_VYASNAGAR1.HTML,1
+287,NH34006,ETAH1,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_ETAH.HTML,1
+288,NH28002,BANDA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_BANDA.HTML,1
+289,EC14001,FSD GAYA,EC,Bihar Region,1,East Zone,,,https://fcicctv.com/Gya-DVR-1.html,2
+290,EC23005,BSWC MOTIHARI,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdmotihari,1
+291,EC16004,CWC KATIHAR,EC,Bihar Region,1,East Zone,,,https://fcicctv.com/katiharfile.html,1
+292,EC16001,FSD BELOURI,EC,Bihar Region,1,East Zone,,,http://203.194.111.183:8800/Other/Belloure.html,2
+293,EC13005,FSD JAYNAGAR,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdjaynagar,1
+294,EC17003,FSD MOKAMA,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdmokama,1
+295,EC23001,FSD CHANPATIA,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdchanpatiya,1
+296,EC21001,FSD SAHARSA,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdsaharsa,1
+297,EC15001,FSD NARAINPUR ANANT,EC,Bihar Region,1,East Zone,,,http://biharfci.livexstreem.in/fsdnarayanpur,1
+298,EC13001,FSD DARBHANGA,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsddarbhanga,1
+299,EC25003,FSD BUXAR,EC,Bihar Region,1,East Zone,,,https://fcibihar.livestreamx.in/fsdbuxur,1
+300,EC16001,FSD BELOURI,EC,Bihar Region,1,East Zone,,,https://fcicctv.com/bellourefile.html,1
+301,ED12001,DHANBAD,ED,Jharkhand Region,1,East Zone,,,https://fcijharkhand.livestreamx.in/fsddhanbad,1
+302,ED13004,RANCHI,ED,Jharkhand Region,1,East Zone,,,https://fcijharkhand.livestreamx.in/fsdranchi,3
+303,ED15001,FSD JASIDIH,ED,Jharkhand Region,1,East Zone,,,https://fcijharkhand.livestreamx.in/fsddeoghar,1
+304,ED14001,FSD DALTONGANJ,ED,Jharkhand Region,1,East Zone,,,https://fcijharkhand.livestreamx.in/fsddaletganj,1
+305,EE12005,KEONJHAR,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdkeonjhar,1
+306,EE15003,RAYAGADA,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdrayagada,1
+307,EE16001,ATTABIRA,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdattabira,1
+308,EE14002,DHENKANAL,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsddhenkanal,1
+309,EE16004,ROURKELA,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdrourkela,1
+310,EE15002,NABARANGPUR,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdnabrangpur,1
+311,EE12002,RANITAL,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdranital,1
+312,EE13003,PHULBANI,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdphulbani,1
+313,EE17001,DUNGURIPALLI,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsddungripali,1
+314,EE17002,KESINGA,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdkesinga,1
+315,EE13001,JAGANNATHPUR,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdjagannathpur,1
+316,EE14001,ANGUL,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdangul,1
+317,EE16005,BALIJHARI,EE,Odisha Region,1,East Zone,,,http://livestreams-rtsp.info:8080/fci/od/bljr.jsp,1
+318,EE18002,KHURDA ROAD,EE,Odisha Region,1,East Zone,,,fciorissa.livestreamx.in/fsdkhurdaroad,1
+319,EE12010,BARIPADA,EE,Odisha Region,1,East Zone,,,https://fciorissa.livestreamx.in/fsdbaripada,1
+320,EE16002,HIRAKUD,EE,Odisha Region,1,East Zone,,,,0
+321,EE13002,PARLAKHEMUNDI,EE,Odisha Region,1,East Zone,,,,0
+322,EE12003,RUPSA,EE,Odisha Region,1,East Zone,,,,0
+323,EF30002,SITARAMPUR,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/R83eiYD9/,11
+324,EF29002,RAIGANJ,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/8NeFArdG/,11
+325,EF12002,ADRA,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/AH8Ba77h/,16
+326,EF19001,BABURHAT,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/d4sa8aAk/,11
+327,EF28001,ASHOKNAGAR,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/zff2krrK/,9
+328,EF21002,SERAMPORE,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/yGZTKYQQ/,13
+329,EF27002,CHARRAH,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/fS73aDHD/,11
+330,EF23001,MANGALBARI,EF,WB Region,1,East Zone,,,https://rtsp.me/embed/iDd9YN4G/,11
+331,EF32001,J J P,EF,WB Region,1,East Zone,,,http://117.247.77.43.81/,2
+332,EF29001,BUNIADPUR,EF,WB Region,1,East Zone,,,IP Address-10.13.107.139 Subnet Mask- 255.255.25S.0 Gateway- 10.13.107.1 Primary Dns -8.8.8. Secondary Dns-172.31.4.48,1
+333,EF13001,ABDARPUR,EF,WB Region,1,East Zone,,,"CP3K0322BPBQ05318 , CP3J00FD1PBQ03266 , CP2J02349PAP06153 , CP3L087E0PAZ03220",1
+334,EF28004,OJM BUDGE BUDGE,EF,WB Region,1,East Zone,,,https://appstore.hikvision.com/0yGe,1
+335,EF25001,BERHAMPUR,EF,WB Region,1,East Zone,,,"DVR-1 I.P 192.168.240.208 , DVR-2 I.P 192.168.240.209",1
+336,EF26001,BHATJUNGLA,EF,WB Region,1,East Zone,,,gCMOB app for Android phone &amp; iCMOB for iOS phone,1
+337,EF27001,BALRAMPUR,EF,WB Region,1,East Zone,,,DEVICE ID SL.NO: CP2H0539DPBQ01172,1
+338,EF30001,DURGAPUR,EF,WB Region,1,East Zone,,,No any network service provider at FSD Durgapur since 13.03.2021 so at present there is no static IP address.,1
+339,WF12008,RAIGARH,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/FSDRaigarh1.html,1
+340,WF12007,KHARSIA,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/FSDKharsia1.html,1
+341,WF12005,BISHRAMPUR,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/FSDBisrampur1.html,1
+342,WF12004,SAKTI,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.244.224/FSDShakti1.html,1
+343,WF14009,MANDIR HASAUD,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Mandirasud1.html,2
+344,WF14022,RAJIM,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/RAJD1.html,2
+345,WF14005,MAHASAMUND,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Mahasamund1.html,2
+346,WF14003,ARJUNI(DTR),WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Arjuni1.html,2
+347,WF14019,BAGHBAHARA,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Bagbahara1.html,2
+348,WF14007,RAIPUR,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Raipur1.html,2
+349,WF13001,DURG,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/FSDDURG.html,1
+350,WF13003,RAJNANDGAON,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/ab-shed-rajnandgaon.html,4
+351,WF12006,KARGI ROAD,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Kargiroad1.html,1
+352,WF12002,BELHA,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Belha1.html,1
+353,WF14002,DHAMTARI,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Dhamtari.html,2
+354,WF12001,BILASPUR,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Bilaspur1.html,3
+355,WF12003,NAILA,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/FSDNAILA1.html,1
+356,WF13002,JAGDALPUR,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Jagdalpur1.html,1
+357,WF14004,NEORA (NC),WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/NeoraOld2.html,1
+358,WF14004,NEORA (NC),WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/Neoranew1.html,1
+359,WF13017,A B SHED RAJNANDGAON,WF,Chhattisgarh Region,2,West Zone,,,http://103.97.245.133/ab-shed-rajnandgaon.html,1
+360,WB12002,FSD BHOMAIYA,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/BhomaiyaD1.html,5
+361,WB14003,MEHSANA,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/MehsanaD1.html,1
+362,WB13004,BHAVNAGAR,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/BhavnagarD1.html,2
+363,WB12001,FSD BARODA,WB,Gujarat Region,2,West Zone,,,http://103.204.191.140:82/BarodaD1.html,7
+364,WB12003,FSD GODHRA,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/GodhraD1.html,1
+365,WB14001,SABARMATI,WB,Gujarat Region,2,West Zone,,,http://103.204.191.140:82/SabarmatiD1.html,13
+366,WB13002,WADHWAN,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/WadhawanD1.html,1
+367,WB14004,PALANPUR,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/PalanpurD1.html,1
+368,WB12004,FSD VALSAD,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/ValsadD1.html,1
+369,WB13003,WANKANER,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/Wankaner.html,1
+370,WB14002,VIRAMGAM,WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/ViramgamD1.html,3
+371,WB13005,GHANTESHWAR(RAJKOT),WB,Gujarat Region,2,West Zone,,,http://fcigujcctv.nilkanthtech.co.in/GhanteshwarD1.html,1
+372,WB15002,GANDHIDHAM (FSD),WB,Gujarat Region,2,West Zone,,,http://fcicctv.red-i.co.in/Gujarat/GandhidhamD1.html,5
+373,WC14001,FSD BORIVILLI,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fciborivali11.html,10
+374,WC14002,FSD BHIWANDI,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcibhiwandi.html,1
+375,WC16001,MANMAD,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcimanmad.html,1
+376,WC17003,FSD WARDHA,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fciwardha1.html,1
+377,WC17001,GONDIA,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcigondia1.html,2
+378,WC18002,PUNE,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcipunefsd1.html,3
+379,WC18003,SOLAPUR,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcisolapur.html,1
+380,WC20001,PANVEL,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcipanvel1.html,7
+381,WC16047,FSD AHMEDNAGAR,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fciahmdnagar.html,1
+382,WC17044,FSD AJNI NEW COMPLEX,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fcinagpur1.html,2
+383,WC20005,RATNAGIRI,WC,Maharastra Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fciratnagiri.html,1
+384,WD14003,GWALIOR FSD,WD,MP Region,2,West Zone,,,http://139.59.49.253/fci_cctv/rstp.fciratnagiri.html,1
+385,WD14002,DATIA FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsddatia,1
+386,WD14001,ASHOKNAGAR FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdashoknagar,1
+387,WD15001,MEGHNAGAR FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdmeghnagar,1
+388,WD21001,RATLAM FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdratlam,1
+389,WD20010,NEWARI FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdniwari,1
+390,WD12054,VIDISHA FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdvidisha,1
+391,WD21002,UJJAIN FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdujjain,1
+392,WD12002,BETUL FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdbetul,1
+393,WD16002,KATANGI FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdkatni,1
+394,WD14004,SHEOPUR FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdsheopur,1
+395,WD12003,ITARSI BSC,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsditarsi,1
+396,WD19003,SATNA FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdsatna,1
+397,WD16004,RAMPUR FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdrampur,1
+398,WD20011,TIKAMGARH FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdtikamgarh/td,1
+399,WD16006,SEONI FSD,WD,MP Region,2,West Zone,,,https://livestream-fcimp.auxes.in/fsdseoni,1
+400,SB25036,APSWC KALIDINDI OWN,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/kknd.jsp,1
+401,SB13004,FCI OWN BSC DOWLESWARAM,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/dwls.jsp,1
+402,SB13005,FCI OWN FSD PERUR,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/perr.jsp,1
+403,SB19015,SWC AMADALAVALASA,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/amdl.jsp,1
+404,SB14003,FCI OWN BSC GUDIVADA,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/gdvd.jsp,1
+405,SB25003,FCI OWN FSD ELURU,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/elr.jsp,1
+406,SB25007,FCI OWN FSD BHIMAVARAM,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/bvrm.jsp,1
+407,SB25004,FCI OWN FSD NIDADAVOLE,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/ndvl.jsp,1
+408,SB14001,FCI OWN FSD KRISHNACANAL,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/kcdp.jsp,1
+409,SB25005,FCI OWN FSD PALAKOLE,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/plkl.jsp,1
+410,SB25006,FCI OWN FSD TADEPALLIGUDEM,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/tpgd.jsp,1
+411,SB13002,FCI OWN BSC SAMALKOT,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/smlkt.jsp,1
+412,SB17002,FCI OWN FSD KAKUTUR,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/kktr.jsp,1
+413,SB19001,FCI OWN FSD AMDALAVALASA,SB,A P Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/ap/amdl.jsp,1
+414,SD13002,BOMMAPUR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_BOMMAPUR.HTML,1
+415,SD13003,BELAGAVI,SD,Karnataka Region,4,South Zone,,,https://livestream.sysnut.com/fci/PEGBelagavi.html,1
+416,SD16001,BALLARI,SD,Karnataka Region,4,South Zone,,,https://livestream.sysnut.com/fci/bellary.html,1
+417,SD12003,FSD K G F KOLAR GOLD FIELD,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_KGF.HTML,1
+418,SD15003,FSD MADDUR,SD,Karnataka Region,4,South Zone,,,https://fcicctv.in/FCI_K_MADDUR1.HTML,1
+419,SD15003,FSD MADDUR,SD,Karnataka Region,4,South Zone,,,https://fcicctv.in/FCI_K_MADDUR2.HTML,1
+420,SD15002,FSD NANJANGUD,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_NANJANGUD.HTML,1
+421,SD17003,HASSAN,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_HASSAN.HTML,1
+422,SD16003,KOPPAL,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_KOPAL.HTML,1
+423,SD16002,RAICHUR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_RAICHUR.HTML,1
+424,SD16002,RAICHUR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_RAICHUR2.HTML,1
+425,SD15005,FSD KUSHAL NAGAR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_KUSHALNAGAR.HTML,1
+426,SD17001,BHADRAWATI,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_BHADRAVATHI.HTML,1
+427,SD17005,UDUPI,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_UDUPI.HTML,1
+428,SD15001,FSD K R NAGAR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_KR_NAGAR.HTML,1
+429,SD15004,FSD MYSURU,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_MAYSOR.HTML,1
+430,SD16001,BALLARI,SD,Karnataka Region,4,South Zone,,,https://www.hikvision.com/en/support/download/software/ivms4200-series,1
+431,SD12002,BSC WHITEFIELD,SD,Karnataka Region,4,South Zone,,,https://www.hikvision.com/en/support/ download/software/ivms4200-series,1
+432,SD13004,VIJAYAPURA,SD,Karnataka Region,4,South Zone,,,https://www.cpplusworld.com/software,1
+433,SD15006,FSD TUMAKURU,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_TUMKUR.HTML,1
+434,SD17004,THAVAREKOPPA,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_TAVEREKOPPA.HTML,1
+435,SD15011,MADDUR,SD,Karnataka Region,4,South Zone,,,https://fcicctv.in/FCI_K_MADDUR1.HTML,2
+436,SD15002,FSD NANJANGUD,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_NANJANGUD.HTML,1
+437,SD17003,HASSAN,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_HASSAN.HTML,1
+438,SD13003,BELAGAVI,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_BELAGUM.HTML,1
+439,SD16002,RAICHUR,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_RAICHUR.HTML,2
+440,SD12002,BSC WHITEFIELD,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_BCWFT.HTML,1
+441,SD16003,KOPPAL,SD,Karnataka Region,4,South Zone,,,https://livestream.sysnut.com/fci/PEGKoppal.html,1
+442,SD16029,PEG YADGIR,SD,Karnataka Region,4,South Zone,,,https://livestream.sysnut.com/fci/PEGYadgir.html,1
+443,SD17004,THAVAREKOPPA,SD,Karnataka Region,4,South Zone,,,https://www.cpplusworld.com/software,1
+444,SD17004,THAVAREKOPPA,SD,Karnataka Region,4,South Zone,,,https://www.cpplusworld.com/software,1
+445,SD13003,BELAGAVI,SD,Karnataka Region,4,South Zone,,,http://fcicctv.in/FCI_K_BELAGUM.HTML,1
+446,SC13004,MEENANGADI(WYNAD),SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/fciwayanad.html,1
+447,SC15002,ARRAKULAM,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Arakulam.html,1
+448,SC15001,CHINGAVANAM,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Chingavanam.html,1
+449,SC18004,KILIKOLLOOR,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Kilikkollur.html,1
+450,SC20002,VAILATHURA TVM,SC,Kerala Region,4,South Zone,,,http://fcicctv.in/FCI_KR_Valiyathura.HTML,1
+451,SC19002,MULAKUNATHUKAVU,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Mulagunnathukavu.html,1
+452,SC19001,CHALAKUDI,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Chalakudy.html,1
+453,SC17002,OLAVAKKOT,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Palakkad.html,1
+454,SC18001,AVANESWARAM,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Avaneeswaram.html,1
+455,SC12002,MAVELIKARA,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Mavelikkara.html,1
+456,SC17001,ANGADIPURAM,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Angadipuram.html,1
+457,SC16001,MUZHAPPILANGAD,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/FCI-Muzhappilangad.html,1
+458,SC13003,KUTTIPURAM,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/fcikuttippuram.html,1
+459,SC13002,WEST HILL CALICUT,SC,Kerala Region,4,South Zone,,,https://netcomitservices.com/live_streaming/fciwesthill.html,1
+460,SE12003,SALEM,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/slm.jsp,1
+461,SE12001,COIMBATORE,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/cmbt.jsp,1
+462,SE12002,PEELAMEDU,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/plmd.jsp,1
+463,SE17002,PONDICHERRY,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/pdcr.jsp,1
+464,SE17004,CHIDAMBARAM(MRM),SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/chmb.jsp,1
+465,SE14002,EGMORE,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/egmr.jsp,1
+466,SE17001,KARAIKAL,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/krkl.jsp,1
+467,SE18001,ARAKONAM,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/arkn.jsp,1
+468,SE15002,RAMANATHAPURAM,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/rmnp.jsp,1
+469,SE16001,FSD SEMBANARKOIL,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/smbn.jsp,1
+470,SE18002,SEVOOR,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/sevr.jsp,1
+471,SE17003,T.V.KOIL,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/tvkl.jsp,1
+472,SE14001,AVADI,SE,Tamil Nadu Region,4,South Zone,,,http://livestreams-rtsp.info:8080/fci/tn/avdi.jsp,1
+473,NH12014,FSD KOSIKALAN,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_KOSHIKANAH2.HTML,1
+474,NH12015,FSD MATHURA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_MATHURA1.HTML,2
+475,NH30011,KAISARGANJ,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_KASGANJ.HTML,1
+476,NH13003,PARSAKHERA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_NPARSAKHERA.HTML,1
+477,NH20083,FSD CHANDARI UNIT I,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_CHANDARI1.HTML,1
+478,NH32002,FSD LAKHIMPUR KHERI,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_LAKHIMPUR.HTML,1
+479,NH14001,BULANDSHAHAR IMALIA,NH,UP Region,3,North Zone,,,http://fcicctv.in/FCI_UP_IMALIA.HTML,1
+480,NH13001,BAREILLY,NH,UP Region,3,North Zone,,,https://fci.gov.in/Application/,1

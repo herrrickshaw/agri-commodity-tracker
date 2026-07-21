@@ -9,6 +9,10 @@ import duckdb
 con = duckdb.connect('data/agri.duckdb')
 con.execute("COPY mandi_prices TO 'data/mandi_prices_snapshot.csv' (HEADER)")
 con.execute("COPY worldbank_agri TO 'data/worldbank_agri_snapshot.csv' (HEADER)")
+try:
+    con.execute("COPY (SELECT * EXCLUDE (raw_json) FROM fci_locations) TO 'data/fci_locations_snapshot.csv' (HEADER)")
+except Exception:
+    pass  # table may not exist until fci_locations.py has run
 EOF
 
 git add data/
