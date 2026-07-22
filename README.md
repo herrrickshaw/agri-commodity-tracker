@@ -1,5 +1,7 @@
 # agri-commodity-tracker
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/herrrickshaw/agri-commodity-tracker/blob/main/notebooks/colab_test.ipynb)
+
 Daily India agricultural commodity price tracking + cross-country agriculture
 indicator panel, from fully open sources (no registration, no paid keys).
 
