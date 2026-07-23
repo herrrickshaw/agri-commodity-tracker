@@ -4,7 +4,9 @@
 Source: "Current Daily Price of Various Commodities from Various Markets"
 (Ministry of Agriculture & Farmers Welfare), resource 9ef84268.
 Uses data.gov.in's PUBLIC demo key by default (documented on data.gov.in);
-set DATA_GOV_IN_KEY for a personal key.
+it works but caps every response at 10 records, so a full ~16k-row day takes
+~1,700 requests. Register a free personal key at data.gov.in and set
+DATA_GOV_IN_KEY to get proper page sizes (see DATA_ACCESS.md).
 
 The feed fills through the IST trading day — schedule pulls after ~14:00 IST.
 Re-running on the same day replaces that day's rows (idempotent).
@@ -28,7 +30,7 @@ RESOURCE = "9ef84268-d588-465a-a308-a864a43d0070"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
 
-def get_json(url, retries=3):
+def get_json(url, retries=5):
     for i in range(retries):
         try:
             with urllib.request.urlopen(
@@ -38,17 +40,30 @@ def get_json(url, retries=3):
         except Exception:
             if i == retries - 1:
                 raise
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))  # backs off 3/6/9/12s — rides out 429s
 
 
 def collect(db_path):
     key = os.environ.get("DATA_GOV_IN_KEY", DEFAULT_KEY)
-    rows, offset, limit = [], 0, 1000
+    rows, offset, requested, total = [], 0, 1000, None
     while True:
         url = (f"https://api.data.gov.in/resource/{RESOURCE}"
-               f"?api-key={key}&format=json&limit={limit}&offset={offset}")
+               f"?api-key={key}&format=json&limit={requested}&offset={offset}")
         d = get_json(url)
         recs = d.get("records", [])
+        if total is None:
+            # The server may clamp the page size below what we asked for (the
+            # public demo key caps at 10) — paginate on what it actually
+            # returns, and on its reported total, never on the requested limit.
+            total = int(d.get("total") or 0)
+            page = len(recs) or 1
+            if page < requested and total > page:
+                n_req = -(-total // page)
+                print(f"note: server caps pages at {page} rows "
+                      f"({n_req} requests for {total} records)"
+                      + (" — set DATA_GOV_IN_KEY to a free personal "
+                         "data.gov.in key for larger pages"
+                         if key == DEFAULT_KEY else ""))
         for r in recs:
             rows.append((
                 r.get("state"), r.get("district"), r.get("market"),
@@ -57,10 +72,18 @@ def collect(db_path):
                 r.get("min_price"), r.get("max_price"), r.get("modal_price"),
                 date.today().isoformat(),
             ))
-        if len(recs) < limit:
+        if not recs:
             break
-        offset += limit
-        time.sleep(0.5)
+        prev, offset = offset, offset + len(recs)
+        if offset // 2000 != prev // 2000:
+            print(f"  ... {offset}/{total}")
+        if offset >= total:
+            break
+        time.sleep(0.3)
+
+    if total and len(rows) != total:
+        print(f"WARNING: collected {len(rows)} rows but the API reported "
+              f"total={total} — today's pull may be incomplete")
 
     con = duckdb.connect(str(db_path))
     con.execute("""CREATE TABLE IF NOT EXISTS mandi_prices (

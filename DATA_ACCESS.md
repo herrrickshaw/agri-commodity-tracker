@@ -15,6 +15,26 @@
 
 1.9 MB — Agmarknet mandi daily pulls; re-collectable via the repo's own collector (data.gov.in public key, pull after 14:00 IST; daily 14:30 cron).
 
+## data.gov.in API key
+
+`collectors/mandi_prices.py` uses data.gov.in's public **sample key** by default.
+The sample key works but **caps every response at 10 records** regardless of the
+requested `limit`, so a full daily feed (~16,000 records) takes ~1,700 paginated
+requests (~15–25 min, and more exposure to 429 rate-limiting).
+
+**Recommended:** register a free personal API key at
+[data.gov.in](https://data.gov.in/user/register) (My Account → API key) and
+export it before running the collector / in the cron environment:
+
+```
+export DATA_GOV_IN_KEY=<your key>
+```
+
+Personal keys honour large page sizes (`limit=1000`), so the same pull completes
+in ~17 requests. The collector paginates on the server's *reported* `total` and
+*actual* returned page size either way, and warns if the collected row count
+doesn't match `total`.
+
 ## Account-wide context
 
 - Full pointer inventory, dedup plan and audit tooling:

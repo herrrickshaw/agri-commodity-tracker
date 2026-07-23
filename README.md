@@ -14,7 +14,17 @@ indicator panel, from fully open sources (no registration, no paid keys).
 | `collectors/fci_locations.py` | [FCI](https://fci.gov.in/depot-details) depot-details API | Full Food Corporation of India depot directory: 478 depots across 5 zones / 25 regions, with zone/region codes + names and depot web links | On change (directory is near-static) |
 
 The data.gov.in collector uses the **public demo API key documented on
-data.gov.in** by default; set `DATA_GOV_IN_KEY` to use a personal key.
+data.gov.in** by default; it caps responses at 10 records/request, making a
+full ~16k-row daily pull slow (~1,700 requests). Register a free personal key
+and set `DATA_GOV_IN_KEY` for proper page sizes — see
+[DATA_ACCESS.md](DATA_ACCESS.md).
+
+> ⚠️ **Historical data caveat:** until 2026-07-23 the collector had a
+> pagination bug (it trusted the requested `limit=1000` instead of the server's
+> effective 10-row page, so it stopped after the first page). Days pulled
+> before the fix are permanent ~10-row stubs, not the full ~16,000-record daily
+> feed; the source API only serves the *current* day, so those days cannot be
+> backfilled. Full coverage starts 2026-07-23.
 
 ## Usage
 
