@@ -18,6 +18,7 @@ import argparse
 import json
 import os
 import time
+import urllib.error
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -30,17 +31,23 @@ RESOURCE = "9ef84268-d588-465a-a308-a864a43d0070"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
 
 
-def get_json(url, retries=5):
+def get_json(url, retries=10):
     for i in range(retries):
         try:
             with urllib.request.urlopen(
                 urllib.request.Request(url, headers=UA), timeout=30
             ) as r:
                 return json.load(r)
+        except urllib.error.HTTPError as e:
+            if i == retries - 1:
+                raise
+            # The shared demo key throttles after a burst of a few hundred
+            # requests; the window clears in a few minutes — wait it out.
+            time.sleep(60 if e.code == 429 else 3 * (i + 1))
         except Exception:
             if i == retries - 1:
                 raise
-            time.sleep(3 * (i + 1))  # backs off 3/6/9/12s — rides out 429s
+            time.sleep(3 * (i + 1))
 
 
 def collect(db_path):
