@@ -19,6 +19,7 @@ import json
 import os
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -29,6 +30,29 @@ import duckdb
 DEFAULT_KEY = "579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b"
 RESOURCE = "9ef84268-d588-465a-a308-a864a43d0070"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
+
+# The API backend is Elasticsearch with index.max_result_window=10000:
+# offset+limit past 10k errors out with ANY key, and the daily feed runs
+# ~16k records — so it cannot be read in one unfiltered sweep. Partition
+# by state (each far below 10k rows/day) and paginate within each.
+WINDOW = 10000
+
+# Superset of Agmarknet state names, including the feed's own spellings
+# (Keralam, Chattisgarh, Pondicherry, NCT of Delhi) alongside standard
+# alternates — an absent name costs one zero-total probe request, and a
+# state string missing from this list surfaces via the grand-total check.
+STATES = [
+    "Andaman and Nicobar", "Andhra Pradesh", "Arunachal Pradesh", "Assam",
+    "Bihar", "Chandigarh", "Chattisgarh", "Chhattisgarh",
+    "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat",
+    "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand",
+    "Karnataka", "Kerala", "Keralam", "Ladakh", "Lakshadweep",
+    "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+    "NCT of Delhi", "Nagaland", "Odisha", "Orissa", "Pondicherry",
+    "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+    "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "Uttaranchal",
+    "West Bengal",
+]
 
 
 def get_json(url, retries=10):
@@ -50,27 +74,91 @@ def get_json(url, retries=10):
             time.sleep(3 * (i + 1))
 
 
+def _url(key, limit, offset, state=None):
+    u = (f"https://api.data.gov.in/resource/{RESOURCE}"
+         f"?api-key={key}&format=json&limit={limit}&offset={offset}")
+    if state is not None:
+        u += "&filters%5Bstate.keyword%5D=" + urllib.parse.quote(state)
+    return u
+
+
+def _fetch_state(key, state, requested):
+    """One filter partition: paginate on the server's reported total and the
+    page size it actually returns (the demo key clamps to 10), never on the
+    requested limit."""
+    recs, offset, total, empties = [], 0, None, 0
+    while True:
+        d = get_json(_url(key, requested, offset, state))
+        page = d.get("records", [])
+        if total is None:
+            total = int(d.get("total") or 0)
+            if total > WINDOW:
+                print(f"WARNING: {state} has {total} rows — exceeds the "
+                      f"{WINDOW}-row API result window; partition will be "
+                      f"incomplete")
+        if not page:
+            if offset >= min(total, WINDOW):
+                break
+            # Throttled responses can be HTTP 200 with an empty records
+            # list — don't mistake one for end-of-data mid-partition.
+            empties += 1
+            if empties > 5:
+                print(f"WARNING: {state}: repeated empty pages at "
+                      f"{offset}/{total} — giving up on this partition")
+                break
+            time.sleep(60)
+            continue
+        empties = 0
+        recs.extend(page)
+        offset += len(page)
+        if offset >= min(total, WINDOW):
+            break
+        time.sleep(0.3)
+    return recs, total
+
+
 def collect(db_path):
     key = os.environ.get("DATA_GOV_IN_KEY", DEFAULT_KEY)
-    rows, offset, requested, total = [], 0, 1000, None
-    while True:
-        url = (f"https://api.data.gov.in/resource/{RESOURCE}"
-               f"?api-key={key}&format=json&limit={requested}&offset={offset}")
-        d = get_json(url)
-        recs = d.get("records", [])
-        if total is None:
-            # The server may clamp the page size below what we asked for (the
-            # public demo key caps at 10) — paginate on what it actually
-            # returns, and on its reported total, never on the requested limit.
-            total = int(d.get("total") or 0)
-            page = len(recs) or 1
-            if page < requested and total > page:
-                n_req = -(-total // page)
-                print(f"note: server caps pages at {page} rows "
-                      f"({n_req} requests for {total} records)"
-                      + (" — set DATA_GOV_IN_KEY to a free personal "
-                         "data.gov.in key for larger pages"
-                         if key == DEFAULT_KEY else ""))
+    requested = 1000
+
+    probe = get_json(_url(key, requested, 0))
+    grand_total = int(probe.get("total") or 0)
+    page = len(probe.get("records", [])) or 1
+    if page < min(requested, grand_total):
+        n_req = -(-grand_total // page) + len(STATES)
+        print(f"note: server caps pages at {page} rows "
+              f"(~{n_req} requests for {grand_total} records)"
+              + (" — set DATA_GOV_IN_KEY to a free personal "
+                 "data.gov.in key for larger pages"
+                 if key == DEFAULT_KEY else ""))
+
+    # A throttled 200-with-empty-records can also zero out a state's probe,
+    # so reconcile against the grand total and re-pull short partitions.
+    results = {}  # state -> (recs, reported_total)
+    todo = list(STATES)
+    for attempt in range(3):
+        if attempt:
+            got = sum(len(r) for r, _ in results.values())
+            print(f"  pass {attempt}: {got}/{grand_total} — "
+                  f"retrying {len(todo)} states in 90s")
+            time.sleep(90)
+            grand_total = int(
+                get_json(_url(key, 1, 0)).get("total") or grand_total)
+        for state in todo:
+            recs, total = _fetch_state(key, state, requested)
+            if state not in results or len(recs) > len(results[state][0]):
+                results[state] = (recs, total)
+                if recs:
+                    print(f"  {state}: {len(recs)}/{total}")
+            time.sleep(0.3)
+        if sum(len(r) for r, _ in results.values()) >= grand_total:
+            break
+        todo = [s for s in STATES
+                if len(results[s][0]) < min(results[s][1] or 0, WINDOW)
+                or (results[s][1] == 0 and not results[s][0])]
+
+    rows = []
+    for recs, _ in results.values():
         for r in recs:
             rows.append((
                 r.get("state"), r.get("district"), r.get("market"),
@@ -79,18 +167,11 @@ def collect(db_path):
                 r.get("min_price"), r.get("max_price"), r.get("modal_price"),
                 date.today().isoformat(),
             ))
-        if not recs:
-            break
-        prev, offset = offset, offset + len(recs)
-        if offset // 2000 != prev // 2000:
-            print(f"  ... {offset}/{total}")
-        if offset >= total:
-            break
-        time.sleep(0.3)
 
-    if total and len(rows) != total:
+    if len(rows) != grand_total:
         print(f"WARNING: collected {len(rows)} rows but the API reported "
-              f"total={total} — today's pull may be incomplete")
+              f"total={grand_total} — today's pull may be incomplete "
+              f"(throttled probes, or a state name missing from STATES?)")
 
     con = duckdb.connect(str(db_path))
     con.execute("""CREATE TABLE IF NOT EXISTS mandi_prices (

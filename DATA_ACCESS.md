@@ -31,9 +31,22 @@ export DATA_GOV_IN_KEY=<your key>
 ```
 
 Personal keys honour large page sizes (`limit=1000`), so the same pull completes
-in ~17 requests. The collector paginates on the server's *reported* `total` and
-*actual* returned page size either way, and warns if the collected row count
-doesn't match `total`.
+in well under 100 requests.
+
+Two server-side quirks the collector works around (with any key):
+
+- **10,000-row result window** — the API's Elasticsearch backend rejects
+  `offset+limit > 10000`, and the daily feed is ~16k rows, so an unfiltered
+  sweep can never reach past row 10,000. The collector therefore partitions by
+  state (`filters[state.keyword]`, each state is far below 10k rows/day) and
+  paginates within each partition, on the server's *reported* `total` and
+  *actual* returned page size — never the requested limit. It warns if the
+  summed row count doesn't match the API's grand total (e.g. a new/renamed
+  state name missing from its `STATES` list — note the feed's own spellings:
+  `Keralam`, `Chattisgarh`, `Pondicherry`, `NCT of Delhi`).
+- **429 rate-limiting** — the shared sample key throttles after bursts of a few
+  hundred requests and clears in a few minutes; the collector waits 60s per
+  attempt (up to 10) on 429.
 
 ## Account-wide context
 
