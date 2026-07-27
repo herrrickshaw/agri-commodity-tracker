@@ -1,0 +1,13 @@
+metric,hs_code,description,unit,fy2023_24,fy2024_25,pct_growth
+export_total,3101,Animal/vegetable fertilisers (organic),US $ Million,17.42,32.37,85.84
+import_total,3101,Animal/vegetable fertilisers (organic),US $ Million,40.69,44.35,9.03
+export_8digit,31010010,Guano,US $ Million,0.55,0.56,0.72
+export_8digit,31010091,Animal dung,US $ Million,0.24,0.20,-15.67
+export_8digit,31010092,Animal excreta,US $ Million,0.02,0.00,-91.35
+export_8digit,31010099,Other mixed/treated organic fertilisers,US $ Million,16.61,31.61,90.33
+import_8digit,31010010,Guano,US $ Million,0.02,0.00,
+import_8digit,31010091,Animal dung,US $ Million,0.00,0.00,
+import_8digit,31010092,Animal excreta,US $ Million,0.00,0.00,
+import_8digit,31010099,Other mixed/treated organic fertilisers,US $ Million,40.68,44.35,9.03
+india_total_export,,All commodities,US $ Million,437072.03,437704.58,0.14
+india_total_import,,All commodities,US $ Million,678214.77,721200.22,6.34
