@@ -48,6 +48,15 @@ Two server-side quirks the collector works around (with any key):
   hundred requests and clears in a few minutes; the collector waits 60s per
   attempt (up to 10) on 429.
 
+## Additional open sources (2026-10-17, no key)
+
+- `collectors/faostat_prices.py`, `collectors/faostat_crops.py` download FAOSTAT
+  bulk zips from `https://bulks-faostat.fao.org/production/` (11.7 MB and 33.9 MB)
+  and filter to the 7 panel countries in memory. CSV snapshots:
+  `data/faostat_*_snapshot.csv.gz`.
+- `collectors/nasa_power.py` calls the NASA POWER monthly point API (14 requests).
+  Snapshot: `data/nasa_power_snapshot.csv.gz`.
+
 ## Account-wide context
 
 - Full pointer inventory, dedup plan and audit tooling:

@@ -16,6 +16,9 @@ indicator panel, from fully open sources (no registration, no paid keys).
 | `collectors/mandi_prices.py` | Agmarknet via [data.gov.in](https://data.gov.in) API | APMC mandi prices: state / district / market / commodity / variety, min-max-modal ₹ per quintal | Daily (feed fills through the IST day — pull after ~14:00 IST) |
 | `collectors/worldbank_agri.py` | [World Bank API](https://api.worldbank.org/v2) | 9 agri indicators (value-added, fertilizer use, cereal yield, food production index, irrigation, employment) × 7 countries (IN CN BR US ID VN TH), 1960–present | Annual series; re-pull monthly |
 | `collectors/fci_locations.py` | [FCI](https://fci.gov.in/depot-details) depot-details API | Full Food Corporation of India depot directory: 478 depots across 5 zones / 25 regions, with zone/region codes + names and depot web links | On change (directory is near-static) |
+| `collectors/faostat_prices.py` | [FAOSTAT](https://bulks-faostat.fao.org/production/) bulk CSV (Prices_E_All_Data) | Annual producer prices (LCU/SLC/USD per tonne + price index) by crop for the 7 panel countries: 91,334 rows, 1991-2025 | Annual; re-pull monthly |
+| `collectors/faostat_crops.py` | [FAOSTAT](https://bulks-faostat.fao.org/production/) bulk CSV (Production_Crops_Livestock) | Crop area harvested / production / yield for the 7 panel countries: 140,295 rows, 1961-2024 | Annual; re-pull monthly |
+| `collectors/nasa_power.py` | [NASA POWER](https://power.larc.nasa.gov/api/temporal/monthly/point) monthly point API | Monthly rainfall (mm/day) and 2 m temperature for one representative point in each of 14 Indian agri states, 2015-2025 (3,696 rows) | Monthly |
 
 The data.gov.in collector uses the **public demo API key documented on
 data.gov.in** by default; it caps responses at 10 records/request, making a
@@ -53,6 +56,9 @@ Suggested cron (14:30 IST daily):
 
 - `mandi_prices(state, district, market, commodity, variety, grade, arrival_date, min_price, max_price, modal_price, pulled_on)`
 - `worldbank_agri(country, indicator_code, indicator, year, value, source_last_updated)`
+- `faostat_producer_prices(country, area, item_code, item, element_code, element, year, months, unit, value, flag)`
+- `faostat_crops(country, area, item_code, item, element, year, unit, value, flag)`
+- `nasa_power_monthly(state, lat, lon, year, month, parameter, value)`
 - `fci_locations(depot_id, depot_code, depot_name, region_code, region_name, zone_id, zone_name, credential_details, additional_information, primary_link, n_links, raw_json)`
 
 ### FCI depot API note
@@ -71,3 +77,12 @@ daily-price resource (`9ef84268-d588-465a-a308-a864a43d0070`), and the World
 Bank API returned data current to 2025. UPAg (`upag.gov.in/api/`) responds but
 its endpoints are not yet mapped — a candidate future collector, alongside
 FCI foodgrain stocks (browser-rendered pages).
+
+### Added 2026-10-17
+
+FAOSTAT bulk files and NASA POWER were each probed with curl and returned data
+without any key. Rejected after probing: `eands.dacnet.nic.in` (DNS does not
+resolve) and the `www.data.gov.in/backend/dataapi` path (returns an edge error
+page from this host). NASA POWER points are single coordinates per state, not
+state averages. FAOSTAT crop production data on the bulk host was last updated
+Dec 2025 (through 2024).
