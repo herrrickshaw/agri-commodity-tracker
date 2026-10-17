@@ -36,7 +36,7 @@ def get_json(url, retries=3):
     for i in range(retries):
         try:
             with urllib.request.urlopen(
-                urllib.request.Request(url, headers=UA), timeout=30
+                urllib.request.Request(url, headers=UA), timeout=90
             ) as r:
                 return json.load(r)
         except Exception:
