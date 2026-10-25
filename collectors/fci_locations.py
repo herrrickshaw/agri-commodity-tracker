@@ -119,6 +119,10 @@ def collect(db_path):
             json.dumps(d, ensure_ascii=False),
         ))
 
+    if not rows:
+        print("fci_locations: no depots returned -- table left unchanged")
+        return
+
     con = duckdb.connect(str(db_path))
     con.execute("""CREATE OR REPLACE TABLE fci_locations (
         depot_id BIGINT, depot_code TEXT, depot_name TEXT,

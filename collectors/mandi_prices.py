@@ -173,6 +173,11 @@ def collect(db_path):
               f"total={grand_total} — today's pull may be incomplete "
               f"(throttled probes, or a state name missing from STATES?)")
 
+    if not rows:
+        # Don't let an empty (throttled / failed) re-run delete today's rows.
+        print("mandi_prices: no rows fetched -- table left unchanged")
+        return
+
     con = duckdb.connect(str(db_path))
     con.execute("""CREATE TABLE IF NOT EXISTS mandi_prices (
         state TEXT, district TEXT, market TEXT, commodity TEXT,
