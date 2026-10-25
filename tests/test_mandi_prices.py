@@ -145,3 +145,113 @@ def test_collect_maps_prices_as_numeric(mocked_api, tmp_path):
         "SELECT modal_price, commodity FROM mandi_prices LIMIT 1").fetchone()
     con.close()
     assert row[0] == 150.0 and row[1] == "Wheat"   # stored as DOUBLE
+
+
+# --------------------------- _fetch_state() : pagination ---------------------------
+
+def _paged_server(total, page_size, empties_at=None, n_empties=0):
+    """Fake API serving `total` records in pages of `page_size` (ignoring the
+    requested limit, like the demo key), optionally returning `n_empties`
+    throttled HTTP-200 empty pages when offset == empties_at."""
+    state = {"empties_left": n_empties, "calls": []}
+
+    def fake(url, retries=10):
+        q = dict(p.split("=", 1) for p in url.split("?", 1)[1].split("&"))
+        off = int(q["offset"])
+        state["calls"].append(off)
+        if empties_at is not None and off == empties_at and state["empties_left"]:
+            state["empties_left"] -= 1
+            return {"total": total, "records": []}
+        n = max(0, min(page_size, total - off))
+        return {"total": total, "records": [{"i": off + k} for k in range(n)]}
+    return fake, state
+
+
+def test_fetch_state_paginates_on_served_page_size_not_requested(monkeypatch):
+    fake, st = _paged_server(total=25, page_size=10)
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp.time, "sleep", lambda *_: None)
+    recs, total = mp._fetch_state("k", "Goa", requested=1000)
+    assert total == 25
+    assert [r["i"] for r in recs] == list(range(25))
+    assert st["calls"] == [0, 10, 20]
+
+
+def test_fetch_state_zero_total_is_one_request(monkeypatch):
+    fake, st = _paged_server(total=0, page_size=10)
+    monkeypatch.setattr(mp, "get_json", fake)
+    recs, total = mp._fetch_state("k", "Ladakh", 1000)
+    assert (recs, total, st["calls"]) == ([], 0, [0])
+
+
+def test_fetch_state_waits_out_throttled_empty_pages(monkeypatch):
+    fake, st = _paged_server(total=30, page_size=10, empties_at=10, n_empties=2)
+    sleeps = []
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp.time, "sleep", sleeps.append)
+    recs, _ = mp._fetch_state("k", "Bihar", 1000)
+    assert len(recs) == 30
+    assert sleeps.count(60) == 2
+
+
+def test_fetch_state_gives_up_after_repeated_empties(monkeypatch, capsys):
+    fake, _ = _paged_server(total=30, page_size=10, empties_at=10, n_empties=99)
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp.time, "sleep", lambda *_: None)
+    recs, total = mp._fetch_state("k", "Bihar", 1000)
+    assert len(recs) == 10 and total == 30
+    assert "giving up" in capsys.readouterr().out
+
+
+def test_fetch_state_stops_at_elasticsearch_window(monkeypatch, capsys):
+    fake, st = _paged_server(total=mp.WINDOW + 500, page_size=1000)
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp.time, "sleep", lambda *_: None)
+    recs, _ = mp._fetch_state("k", "Uttar Pradesh", 1000)
+    assert len(recs) == mp.WINDOW
+    assert max(st["calls"]) < mp.WINDOW
+    assert "exceeds" in capsys.readouterr().out
+
+
+def test_collect_repulls_a_state_whose_probe_was_throttled(monkeypatch, tmp_path):
+    """First pass: Goa's partition comes back as a throttled empty 200 (total 0).
+    The grand-total reconciliation must re-pull it on the next pass."""
+    seen = {"goa": 0}
+
+    def fake(url, retries=10):
+        if "filters" not in url:
+            return {"total": 2, "records": [_fake_record()]}
+        if url.endswith("=Goa"):
+            seen["goa"] += 1
+            if seen["goa"] == 1:
+                return {"total": 0, "records": []}
+            return {"total": 1, "records": [dict(_fake_record(), state="Goa")]}
+        if url.endswith("=Kerala"):
+            return {"total": 1, "records": [dict(_fake_record(), state="Kerala")]}
+        return {"total": 0, "records": []}
+
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp.time, "sleep", lambda *_: None)
+    db = tmp_path / "agri.duckdb"
+    mp.collect(str(db))
+    con = duckdb.connect(str(db))
+    states = sorted(r[0] for r in con.execute("SELECT state FROM mandi_prices").fetchall())
+    con.close()
+    assert states == ["Goa", "Kerala"]
+    assert seen["goa"] == 2
+
+
+def test_empty_rerun_does_not_wipe_todays_rows(mocked_api, monkeypatch, tmp_path):
+    """A same-day re-run that gets nothing (throttled / outage) used to DELETE
+    today's rows and then crash in executemany([]), losing the earlier pull."""
+    db = tmp_path / "agri.duckdb"
+    mp.collect(str(db))
+    monkeypatch.setattr(mp, "get_json", lambda url, retries=10: {"total": 0, "records": []})
+    try:
+        mp.collect(str(db))
+    except Exception:
+        pass
+    con = duckdb.connect(str(db))
+    count = con.execute("SELECT COUNT(*) FROM mandi_prices").fetchone()[0]
+    con.close()
+    assert count == mocked_api
