@@ -11,6 +11,7 @@ registration or paid keys.
 > World Bank APIs; data is republished as-is for research use, no warranty.
 > Mandi coverage is complete from 2026-07-23 onward (see Limitations).
 
+<!-- how-to-use-with-ai -->
 > **New here?** See [How to use this repo with AI](HOW_TO_USE_WITH_AI.md) —
 > clone it, paste it into an AI tool, and ask in plain English.
 > [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/herrrickshaw/agri-commodity-tracker/blob/main/notebooks/colab_test.ipynb)
