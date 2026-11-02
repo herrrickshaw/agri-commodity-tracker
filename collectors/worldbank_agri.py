@@ -5,18 +5,36 @@ Pulls the full annual history (1960-present) for a set of agri indicators
 across comparator countries into DuckDB. Rebuilds the table on each run —
 the API is the system of record.
 
+Pipeline:  fetch_panel() -> write_table()
+(network, yields rows)    (DuckDB, CREATE OR REPLACE)
+
 Usage:  python3 collectors/worldbank_agri.py [--db data/agri.duckdb]
 """
 
-import argparse
-import json
+from __future__ import annotations
+
+import logging
+import sys
 import time
-import urllib.request
+from collections.abc import Iterator
 from pathlib import Path
+from typing import Any
 
 import duckdb
 
-UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"}
+if __package__ in (None, ""):  # run as a script: python3 collectors/worldbank_agri.py
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from collectors import common  # noqa: E402
+
+log = logging.getLogger(__name__)
+
+UA = common.UA
+API_BASE = "https://api.worldbank.org/v2"
+PER_PAGE = 1000
+RETRIES = 3
+BACKOFF_S = 2
+INDICATOR_PAUSE_S = 0.3
 
 INDICATORS = {
     "NV.AGR.TOTL.ZS": "agri_value_added_pct_gdp",
@@ -31,54 +49,86 @@ INDICATORS = {
 }
 COUNTRIES = ["IND", "CHN", "BRA", "USA", "IDN", "VNM", "THA"]
 
+TABLE_DDL = """CREATE OR REPLACE TABLE worldbank_agri (
+    country TEXT, indicator_code TEXT, indicator TEXT,
+    year INTEGER, value DOUBLE, source_last_updated TEXT)"""
 
-def get_json(url, retries=3):
-    for i in range(retries):
-        try:
-            with urllib.request.urlopen(
-                urllib.request.Request(url, headers=UA), timeout=30
-            ) as r:
-                return json.load(r)
-        except Exception:
-            if i == retries - 1:
-                raise
-            time.sleep(2 * (i + 1))
+# (country, indicator_code, indicator, year, value, source_last_updated)
+Row = tuple[str, str, str, int, float, Any]
 
 
-def collect(db_path):
-    rows = []
-    for iso in COUNTRIES:
-        for code, name in INDICATORS.items():
-            page = 1
-            while True:
-                d = get_json(
-                    f"https://api.worldbank.org/v2/country/{iso}/indicator/"
-                    f"{code}?format=json&per_page=1000&page={page}")
-                if not d or len(d) < 2 or not d[1]:
-                    break
-                for obs in d[1]:
-                    if obs.get("value") is not None:
-                        rows.append((iso, code, name, int(obs["date"]),
-                                     float(obs["value"]),
-                                     d[0].get("lastupdated")))
-                if page >= d[0].get("pages", 1):
-                    break
-                page += 1
-            time.sleep(0.3)
-        print(f"  {iso}: done ({len(rows)} rows cumulative)")
+def get_json(url: str, retries: int = RETRIES) -> Any:
+    """GET JSON with the World Bank retry policy (short linear backoff)."""
+    return common.get_json(url, retries=retries, backoff_s=BACKOFF_S)
 
+
+def indicator_url(iso: str, code: str, page: int) -> str:
+    """One page of one indicator for one country."""
+    return (f"{API_BASE}/country/{iso}/indicator/{code}"
+            f"?format=json&per_page={PER_PAGE}&page={page}")
+
+
+def parse_page(payload: Any, iso: str, code: str, name: str) -> tuple[list[Row], int]:
+    """Rows with non-null values from one API page, plus the page count it reports.
+
+    The World Bank envelope is ``[meta, observations]``; anything else (error
+    objects, empty bodies) parses as no rows and 0 pages.
+    """
+    if not payload or len(payload) < 2 or not payload[1]:
+        return [], 0
+    meta, observations = payload[0], payload[1]
+    rows = [(iso, code, name, int(obs["date"]), float(obs["value"]), meta.get("lastupdated"))
+            for obs in observations if obs.get("value") is not None]
+    return rows, meta.get("pages", 1)
+
+
+def fetch_indicator(iso: str, code: str, name: str) -> Iterator[Row]:
+    """All pages of one (country, indicator) series."""
+    page = 1
+    while True:
+        rows, pages = parse_page(get_json(indicator_url(iso, code, page)), iso, code, name)
+        if not rows and pages == 0:
+            return
+        yield from rows
+        if page >= pages:
+            return
+        page += 1
+
+
+def fetch_panel(countries: list[str] = COUNTRIES,
+                indicators: dict[str, str] = INDICATORS) -> list[Row]:
+    """Every indicator for every country; logs a progress line per country."""
+    rows: list[Row] = []
+    for iso in countries:
+        for code, name in indicators.items():
+            rows.extend(fetch_indicator(iso, code, name))
+            time.sleep(INDICATOR_PAUSE_S)
+        log.info("  %s: done (%d rows cumulative)", iso, len(rows))
+    return rows
+
+
+def write_table(db_path: str, rows: list[Row]) -> None:
+    """Replace the worldbank_agri table with ``rows``."""
     con = duckdb.connect(str(db_path))
-    con.execute("""CREATE OR REPLACE TABLE worldbank_agri (
-        country TEXT, indicator_code TEXT, indicator TEXT,
-        year INTEGER, value DOUBLE, source_last_updated TEXT)""")
-    con.executemany("INSERT INTO worldbank_agri VALUES (?,?,?,?,?,?)", rows)
-    con.close()
-    print(f"worldbank_agri: {len(rows):,} rows -> {db_path}")
+    try:
+        con.execute(TABLE_DDL)
+        con.executemany("INSERT INTO worldbank_agri VALUES (?,?,?,?,?,?)", rows)
+    finally:
+        con.close()
+
+
+def collect(db_path: str) -> None:
+    """Rebuild the worldbank_agri table in ``db_path`` from the live API."""
+    rows = fetch_panel()
+    write_table(db_path, rows)
+    log.info("worldbank_agri: %s rows -> %s", f"{len(rows):,}", db_path)
+
+
+def main(argv: list[str] | None = None) -> None:
+    common.configure_cli_logging()
+    args = common.db_arg_parser(__doc__.splitlines()[0]).parse_args(argv)
+    collect(args.db)
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default=str(Path(__file__).resolve().parent.parent
-                                        / "data" / "agri.duckdb"))
-    args = ap.parse_args()
-    collect(args.db)
+    main()
