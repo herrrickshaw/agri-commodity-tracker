@@ -14,7 +14,6 @@ import pytest
 
 from collectors import mandi_prices as mp
 
-
 # --------------------------- _url() : pure API contract ---------------------------
 
 def test_url_has_core_query_params():
@@ -145,3 +144,30 @@ def test_collect_maps_prices_as_numeric(mocked_api, tmp_path):
         "SELECT modal_price, commodity FROM mandi_prices LIMIT 1").fetchone()
     con.close()
     assert row[0] == 150.0 and row[1] == "Wheat"   # stored as DOUBLE
+
+
+# --------------------------- pure stage functions --------------------------------
+
+def test_rows_from_results_flattens_in_ddl_order():
+    results = {"A": ([_fake_record()], 1), "B": ([], 0)}
+    rows = mp.rows_from_results(results, "2026-01-02")
+    assert len(rows) == 1
+    assert rows[0][0] == "Teststate" and rows[0][6] == "01/01/2026"
+    assert rows[0][-1] == "2026-01-02"
+
+
+def test_short_states_flags_incomplete_and_zero_probe_partitions():
+    full = {s: ([_fake_record()], 1) for s in mp.STATES}
+    assert mp._short_states(full) == []
+    full["Goa"] = ([], 0)                       # zero probe, nothing fetched
+    full["Bihar"] = ([_fake_record()], 5)       # fetched 1 of 5
+    assert sorted(mp._short_states(full)) == ["Bihar", "Goa"]
+
+
+def test_write_rows_replaces_only_that_pull_date(tmp_path):
+    db = str(tmp_path / "a.duckdb")
+    day1 = mp.rows_from_results({"A": ([_fake_record()], 1)}, "2026-01-01")
+    day2 = mp.rows_from_results({"A": ([_fake_record()], 1)}, "2026-01-02")
+    assert mp.write_rows(db, day1, "2026-01-01") == 1
+    assert mp.write_rows(db, day2 * 2, "2026-01-02") == 3
+    assert mp.write_rows(db, day2, "2026-01-02") == 2   # day 2 replaced, day 1 kept
