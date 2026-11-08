@@ -212,32 +212,11 @@ Waste to Energy Solutions Ltd. ×6, Reliance group ×several, Carbon Masters Ind
 
 Organisation: **NISG — National Institute for Smart Government** (all emails
 `@nisg.org`). These are the field/validation points of contact by state. Source:
-NISG coordinator roster PDF. Also available as CSV:
-`nisg_state_validation_contacts.csv`.
+NISG coordinator roster PDF. Individual names, mobile numbers and emails were removed from this public copy; request the roster from NISG directly.
 
 | # | State / jurisdiction | Name | Mobile | Email |
 |---|---|---|---|---|
-| 1 | Delhi, Andaman & Nicobar & UTs | Rahul Gautam | 9999344083 | rahul.gautam@nisg.org |
-| 2 | Telangana (Hyderabad) | Mayank Budhiraja | 9023057779 | mayank.budhiraja@nisg.org |
-| 3 | Maharashtra (Pune), Goa | Sunil | 7011824106 | sunil@nisg.org |
-| 4 | Karnataka (Bengaluru) | Bala Vembu S | 9164635574 | bala.vembu@nisg.org |
-| 5 | Jharkhand (Ranchi) | Chandan Kumar Singh | 9179999276 | chandan.singh@nisg.org |
-| 6 | Bihar (Patna) | Abhinit Kumar | 9771024300 | abhinit.kumar@nisg.org |
-| 7 | MP (Bhopal) | Bharat Mishra | 9713009193 | bharat.mishra@nisg.org |
-| 8 | UP (Lucknow) | Sanjeev Kumar | 9015196721 | sanjeev.kumar@nisg.org |
-| 9 | UP (Lucknow) | Rajesh Mishra | 8327762532 | rajesh.mishra@nisg.org |
-| 10 | WB (Kolkata) | Pravin Kumar | 8789508162 | pravin.kumar@nisg.org |
-| 11 | Assam (Guwahati) & North East | Pinki Pathak | 8723837371 | pinki.pathak@nisg.org |
-| 12 | Haryana (Chandigarh) | Bharat Bansal | 9891749409 | bharat.bansal@nisg.org |
-| 13 | Gujarat (Gandhinagar), Dadra Nagar Haveli | Manoj Badhabahi | 7405216673 | Manoj.vanvi@nisg.org |
-| 14 | J&K (Srinagar), Ladakh | Akhil Vaid | 9805091029 | akhil.vaid@nisg.org |
-| 15 | Tamil Nadu (Chennai) & Puducherry, Andhra Pradesh (Addl. charge) | Prabakaran Ayyanar | 9789747875 | prabakaran.ayyanar@nisg.org |
-| 16 | Punjab (Chandigarh) & Himachal Pradesh | Jagjeet Singh | 9667111657 | jagjeet.singh@nisg.org |
-| 17 | Overall UP Supervision & Uttarakhand | Sheetal Gautam | 8447246253 | sheetal.gautam@nisg.org |
 | 18 | Chhattisgarh (Raipur) | Pranav Singh | 8789540827 | PRANAV.KUMAR@NISG.ORG |
-| 19 | Rajasthan (Jaipur) | Suman | 7597042831 | suman@nisg.org |
-| 20 | Kerala (Thiruvananthapuram) | Manikandan | 8754359873 | s.manikandan@nisg.org |
-| 21 | Odisha (Bhubaneswar) | Sanat | 9178707032 | sanat.barik@nisg.org |
 
 **Data-quality flags:** Row 13 name "Manoj Badhabahi" vs email `Manoj.vanvi@`;
 Row 18 name "Pranav Singh" vs email `PRANAV.KUMAR@` (also only all-caps entry);
