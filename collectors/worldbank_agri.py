@@ -67,6 +67,12 @@ def collect(db_path):
             time.sleep(0.3)
         print(f"  {iso}: done ({len(rows)} rows cumulative)")
 
+    if not rows:
+        # API outage / error payloads: keep the existing panel instead of
+        # replacing it with nothing.
+        print("worldbank_agri: no observations fetched -- table left unchanged")
+        return
+
     con = duckdb.connect(str(db_path))
     con.execute("""CREATE OR REPLACE TABLE worldbank_agri (
         country TEXT, indicator_code TEXT, indicator TEXT,
