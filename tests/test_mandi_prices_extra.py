@@ -223,7 +223,7 @@ def test_collect_cap_note_mentions_env_var_only_for_demo_key(monkeypatch, sleeps
     def fake(url):
         if "filters" in url:
             return {"total": 1, "records": [rec(0)]}
-        return {"total": 100, "records": [rec(i) for i in range(10)]}   # server capped at 10
+        return {"total": 95, "records": [rec(i) for i in range(10)]}   # server capped at 10
 
     monkeypatch.setattr(mp, "get_json", fake)
     monkeypatch.setattr(mp, "STATES", ["A"])
@@ -231,7 +231,7 @@ def test_collect_cap_note_mentions_env_var_only_for_demo_key(monkeypatch, sleeps
     mp.collect(tmp_path / "a.duckdb")
     out = capsys.readouterr().out
     assert "server caps pages at 10 rows" in out
-    assert "~11 requests for 100 records" in out      # ceil(100/10) + len(STATES)
+    assert "~11 requests for 95 records" in out       # ceil(95/10) + len(STATES)
     assert "set DATA_GOV_IN_KEY" in out
 
     monkeypatch.setenv("DATA_GOV_IN_KEY", "PERSONAL")
@@ -280,6 +280,7 @@ def test_collect_no_warning_when_totals_match(monkeypatch, sleeps, tmp_path, cap
     out = capsys.readouterr().out
     assert "WARNING" not in out
     assert "mandi_prices: +1 rows today, 1 total" in out
+    assert 90 not in sleeps and "retrying" not in out   # sum == grand_total: no extra pass
 
 
 def test_collect_retries_short_partitions_in_later_passes(monkeypatch, sleeps, tmp_path, capsys):
@@ -379,3 +380,33 @@ def test_collect_empty_feed_writes_zero_rows_instead_of_crashing(monkeypatch, sl
     db = tmp_path / "a.duckdb"
     mp.collect(db)
     assert _rows(db) == []
+
+
+def test_collect_equal_length_repull_keeps_first_result(monkeypatch, sleeps, tmp_path):
+    seen = {"n": 0}
+
+    def fake(url):
+        if "filters" not in url:
+            return {"total": 5, "records": [rec(0)]}
+        if "offset=0" not in url:                       # partition stays short: 1 of 2
+            return {"total": 2, "records": []}
+        seen["n"] += 1
+        return {"total": 2, "records": [rec(0, market=f"PASS{seen['n']}")]}
+
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp, "STATES", ["A"])
+    db = tmp_path / "a.duckdb"
+    mp.collect(db)
+    assert [r[2] for r in _rows(db)] == ["PASS1"]     # later same-size pulls do not replace
+
+
+def test_collect_warns_when_more_rows_than_reported_total(monkeypatch, sleeps, tmp_path, capsys):
+    def fake(url):
+        if "filters" in url:
+            return {"total": 2, "records": [rec(0), rec(1)]}
+        return {"total": 1, "records": [rec(0)]}
+
+    monkeypatch.setattr(mp, "get_json", fake)
+    monkeypatch.setattr(mp, "STATES", ["A"])
+    mp.collect(tmp_path / "a.duckdb")
+    assert "WARNING: collected 2 rows but the API reported total=1" in capsys.readouterr().out
