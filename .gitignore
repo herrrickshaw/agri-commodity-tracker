@@ -4,3 +4,5 @@ collect.log
 .DS_Store
 graphify-out/
 .pytest_cache/
+coverage.xml
+.coverage
